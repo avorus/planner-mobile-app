@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlannerApp.DeletedTasksPage"
+             Title="Удаленные задачи:"
+             BackgroundColor="#131313">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <ListView
+                ItemsSource="{Binding DeletedTasksList}"
+                ItemTapped="DeletedTaskClick"
+                HasUnevenRows="True"
+                SeparatorVisibility="Default"
+                x:Name="DeletedTaskList">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Orientation="Horizontal" BackgroundColor="#131313">
+                                    <CheckBox 
+                                                x:Name="IsCompletedCheckBox" 
+                                                Color="#ffc40b"
+                                                IsEnabled="False"
+                                                IsChecked="{Binding IsCompleted}"/>
+                                    <StackLayout Orientation="Vertical" VerticalOptions="End"  BackgroundColor="#131313">
+                                        <Label 
+                                                Margin="5,0,0,0" 
+                                                TextColor="#f7fbf7" 
+                                                BackgroundColor="#131313"
+                                                Text="{Binding MainDescription}" 
+                                                FontSize="16"
+                                                FontAttributes="Bold"/>
+                                        <Label 
+                                                Margin="5,0,0,0" 
+                                                TextColor="#474647" 
+                                                BackgroundColor="#131313"
+                                                Text="{Binding DetailDescription}" 
+                                                FontSize="14"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand"  BackgroundColor="#131313">
+                                        <Label 
+                                                VerticalOptions="EndAndExpand"
+                                                HorizontalOptions="EndAndExpand"
+                                                Margin="5,0,0,0" 
+                                                WidthRequest="90"
+                                                TextColor="#ffc40b" 
+                                                BackgroundColor="#131313"
+                                                Text="" 
+                                                FontSize="14"/>
+                                        <Label 
+                                                VerticalOptions="End"
+                                                HorizontalOptions="EndAndExpand"
+                                                Margin="5,0,0,0" 
+                                                WidthRequest="90"
+                                                TextColor="#ffc40b" 
+                                                BackgroundColor="#131313"
+                                                Text="{Binding BeginDateText}" 
+                                                FontSize="14"/>
+                                        <Label 
+                                                VerticalOptions="End"
+                                                HorizontalOptions="EndAndExpand"
+                                                Margin="5,0,0,0" 
+                                                WidthRequest="90"
+                                                TextColor="#ffc40b" 
+                                                BackgroundColor="#131313"
+                                                Text="{Binding EndDateText}" 
+                                                FontSize="14"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button
+                x:Name="DeleteButton"
+                VerticalOptions="StartAndExpand"
+                Margin="0,10,0,10"
+                BackgroundColor="#ffc40b" 
+                TextColor="White"
+                Text="Очистить все"
+                Clicked="OnDeleteButtonCliked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PlannerApp.HelpPage"
+             Title="О приложении:"
+             BackgroundColor="#131313">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label x:Name="QuoteTextLabel"
+                    Margin="5, 5, 5, 3"
+                    FontSize="16"
+                    FontAttributes="Italic"
+                    TextColor="#f7fbf7"/>
+                <Label x:Name="QuoteAuthorLabel"
+                    Margin="5, 0, 5, 15"
+                    TextColor="#ffc40b"
+                    FontSize="15"
+                    FontAttributes="Italic"
+                    HorizontalOptions="End"/>
+                <Image Source="LineImage.png"/>
+                <Label x:Name="IntroductionLabel"
+                    Margin="5, 5, 5, 5"
+                    TextColor="#f7fbf7"
+                    FontSize="16"/>
+                <Image Source="LineImage.png"/>
+                <Label x:Name="TitleLabel"
+                    Margin="5, 5, 5, 5"
+                    TextColor="#f7fbf7"
+                    FontSize="16"/>
+                <Label
+                    Margin="5, 5, 5, 5"
+                    HorizontalOptions="Center"
+                    Text="Добавление задачи"
+                    TextColor="#f7fbf7"
+                    FontSize="16"
+                    FontAttributes="Bold"/>
+                <Label x:Name="InstructionAddLabel"
+                    Margin="5, 0, 5, 5"
+                    TextColor="#474647"
+                    FontSize="15"/>
+                <Label
+                    Margin="5, 5, 5, 5"
+                    HorizontalOptions="Center"
+                    Text="Список задач"
+                    TextColor="#f7fbf7"
+                    FontSize="16"
+                    FontAttributes="Bold"/>
+                <Label x:Name="InstructionTaskListLabel"
+                    Margin="5, 0, 5, 5"
+                    TextColor="#474647"
+                    FontSize="15"/>
+                <Label
+                    Margin="5, 5, 5, 5"
+                    Text="Редактирование задачи"
+                    HorizontalOptions="Center"
+                    TextColor="#f7fbf7"
+                    FontSize="16"
+                    FontAttributes="Bold"/>
+                <Label x:Name="InstructionEditLabel"
+                    Margin="5, 0, 5, 5"
+                    TextColor="#474647"
+                    FontSize="15"/>
+                <Label
+                    Margin="5, 5, 5, 5"
+                    Text="Удаление задачи"
+                    HorizontalOptions="Center"
+                    TextColor="#f7fbf7"
+                    FontSize="16"
+                    FontAttributes="Bold"/>
+                <Label x:Name="InstructionDeleteLabel"
+                    Margin="5, 0, 5, 5"
+                    TextColor="#474647"
+                    FontSize="15"/>
+                <Label
+                    Margin="5, 5, 5, 5"
+                    Text="График задач"
+                    HorizontalOptions="Center"
+                    TextColor="#f7fbf7"
+                    FontSize="16"
+                    FontAttributes="Bold"/>
+                <Label x:Name="InstructionTaskGraphLabelPart1"
+                    Margin="5, 0, 5, 0"
+                    TextColor="#474647"
+                    FontSize="15"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label
+                    Margin="5, 2, 2, 0"
+                    Text="Жёлтый: "
+                    TextColor="#ffc40b"
+                    FontSize="15"/>
+                    <Label
+                    Margin="0, 2, 5, 0"
+                    Text="Невыполненные задачи"
+                    TextColor="#474647"
+                    FontSize="15"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label
+                    Margin="5, 2, 2, 0"
+                    Text="Красный: "
+                    TextColor="#ff4040"
+                    FontSize="15"/>
+                    <Label
+                    Margin="0, 2, 5, 0"
+                    Text="Невыполненные дедлайны"
+                    TextColor="#474647"
+                    FontSize="15"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label
+                    Margin="5, 2, 2, 0"
+                    Text="Зелёный: "
+                    TextColor="#0ed145"
+                    FontSize="15"/>
+                    <Label
+                    Margin="0, 2, 5, 0"
+                    Text="Выполненные задачи и дедлайны"
+                    TextColor="#474647"
+                    FontSize="15"/>
+                </StackLayout>
+                <Label x:Name="InstructionTaskGraphLabelPart2"
+                    Margin="5, 0, 5, 10"
+                    TextColor="#474647"
+                    FontSize="15"/>
+                <Image Source="LineImage.png"/>
+                <Label x:Name="ConnectLabel"
+                    Margin="5, 5, 5, 2"
+                    TextColor="#f7fbf7"
+                    FontSize="16"/>
+                <Label
+                    Margin="5, 0, 5, 5"
+                    Text="plannerapp.connect@yandex.ru"
+                    TextColor="#ffc40b"
+                    FontSize="16"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

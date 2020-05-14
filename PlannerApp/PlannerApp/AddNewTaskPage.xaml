@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlannerApp.AddNewTaskPage"
+             Title="Что нужно сделать?"
+             BackgroundColor="#131313">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Spacing="10">
+            <Entry 
+                x:Name="MainDescriptionEntry"
+                Margin="10,10,10,0"
+                BackgroundColor="#191919" 
+                TextColor="#f7fbf7"
+                FontSize="16"
+                Placeholder="Введите название задачи" 
+                PlaceholderColor="#474647"
+                MaxLength="35"
+                TextChanged="CheckInput"
+                Completed="CheckInput"/>
+            <Editor 
+                x:Name="DetailDescriptionEditor"
+                HeightRequest="120"
+                BackgroundColor="#191919" 
+                TextColor="#f7fbf7"
+                FontSize="16"
+                Placeholder="Введите описание задачи" 
+                PlaceholderColor="#474647"
+                Margin="10,0,10,0"
+                MaxLength="200"
+                TextChanged="CheckInput"
+                Completed="CheckInput"/>
+            <StackLayout Orientation="Horizontal">
+                <Label 
+                BackgroundColor="#131313" 
+                VerticalOptions="Center"    
+                TextColor="#f7fbf7" 
+                Text="Дедлайн:" 
+                FontSize="16"
+                Margin="10,0,15,0"/>
+                <Switch
+                    x:Name="DeadlineSwitch"
+                    HorizontalOptions="Center"
+                    OnColor="#ffc40b"
+                    Toggled="OnDeadlineSwitchToggled"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label 
+                x:Name="StartLabel"
+                BackgroundColor="#131313" 
+                VerticalOptions="Center"    
+                TextColor="#f7fbf7" 
+                Text="Начало:" 
+                FontSize="16"
+                Margin="10,0,15,0"/>
+                <DatePicker 
+                    x:Name="StartDatePicker"
+                    HorizontalOptions="Center"
+                    MinimumDate="01/01/2020"
+                    TextColor="#f7fbf7" 
+                    FontSize="16"
+                    DateSelected="CheckInput"/>
+                <TimePicker 
+                    x:Name="StartTimePicker"
+                    HorizontalOptions="Center"
+                    Format="HH:mm"
+                    TextColor="#f7fbf7" 
+                    FontSize="16"
+                    PropertyChanged="CheckInput"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label 
+                x:Name="EndLabel"
+                BackgroundColor="#131313" 
+                VerticalOptions="Center"
+                TextColor="#f7fbf7" 
+                Text="Конец:" 
+                FontSize="16"
+                Margin="10,0,15,0"/>
+                <DatePicker 
+                    x:Name="EndDatePicker"
+                    VerticalOptions="Center"
+                    MinimumDate="01/01/2020"
+                    TextColor="#f7fbf7" 
+                    FontSize="16"
+                    DateSelected="CheckInput"/>
+                <TimePicker 
+                    x:Name="EndTimePicker"
+                    VerticalOptions="Center"
+                    Format="HH:mm"
+                    TextColor="#f7fbf7" 
+                    FontSize="16"
+                    PropertyChanged="CheckInput"/>
+            </StackLayout>
+            <Button 
+                x:Name="AddButton"
+                VerticalOptions="EndAndExpand"
+                Margin="0,0,0,10"
+                TextColor="White"
+                Text="Добавить задачу"
+                Clicked="OnAddButtonCliked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

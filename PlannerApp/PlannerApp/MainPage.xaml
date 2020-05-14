@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlannerApp.MainPage">
+    <MasterDetailPage.Master>
+        <ContentPage Title="Мои задачи:">
+            <ContentPage.Content>
+                <StackLayout BackgroundColor="#191919">
+                    <ListView 
+                         ItemsSource="{Binding MenuItems}" 
+                         HasUnevenRows="True" 
+                         ItemTapped="MenuItemClick"
+                        SeparatorVisibility="Default"
+                        x:Name="MenuList">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <StackLayout Orientation="Horizontal" Spacing="8" Margin="8,0,0,0">
+                                            <Image Source="{Binding Icon}" HeightRequest="64" />
+                                            <Label Margin="5,0,0,0" TextColor="#f7fbf7" Text="{Binding Name}" FontSize="Medium" VerticalOptions="Center"/>
+                                        </StackLayout>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Master>
+</MasterDetailPage>

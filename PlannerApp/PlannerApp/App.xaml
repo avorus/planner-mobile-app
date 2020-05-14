@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PlannerApp.App">
+    <Application.Resources>
+        <Style TargetType="StackLayout">
+            <Setter Property="Spacing" Value="0"/>
+        </Style>
+        <Style TargetType="NavigationPage">
+            <Setter Property="BarBackgroundColor" Value="#191919"/>
+            <Setter Property="HasBackButton" Value="False"/>
+            <Setter Property="BarTextColor" Value="#f7fbf7"/>
+        </Style>
+    </Application.Resources>
+</Application>

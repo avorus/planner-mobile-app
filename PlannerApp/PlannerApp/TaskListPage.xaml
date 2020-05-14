@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlannerApp.TaskListPage"             
+             Title="Мои задачи:"
+             BackgroundColor="#131313">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <StackLayout Orientation="Horizontal">
+                <Label 
+                BackgroundColor="#131313" 
+                VerticalOptions="Center"    
+                TextColor="#474647" 
+                Text="Фильтр:" 
+                FontSize="16"
+                Margin="10,0,15,0"/>
+                <Picker
+                x:Name="CategoryPicker"
+                HorizontalOptions="Center"
+                WidthRequest="200"
+                BackgroundColor="#131313" 
+                TextColor="#474647" 
+                FontSize="16"
+                ItemsSource="{Binding Categories}"
+                SelectedIndexChanged="OnCategoryChanged"
+                />
+            </StackLayout>
+            <ListView
+                x:Name="TasksListView"
+                ItemsSource="{Binding TasksList}"
+                HasUnevenRows="True"
+                SeparatorVisibility="Default">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <SwipeView SwipeEnded="OnSwipeEnded">
+                                    <SwipeView.LeftItems>
+                                        <SwipeItems>
+                                            <SwipeItem Text=""
+                                                   IconImageSource="DeleteImage.png"
+                                                   BackgroundColor="#ff4040"/>
+                                        </SwipeItems>
+                                    </SwipeView.LeftItems>
+                                    <SwipeView.RightItems>
+                                        <SwipeItems>
+                                            <SwipeItem Text=""
+                                                   IconImageSource="EditImage.png"
+                                                   BackgroundColor="#ffc40b"/>
+                                        </SwipeItems>
+                                    </SwipeView.RightItems>
+                                    <StackLayout Orientation="Horizontal" BackgroundColor="#131313">
+                                        <CheckBox 
+                                                x:Name="IsCompletedCheckBox" 
+                                                Color="#ffc40b"
+                                                IsChecked="{Binding IsCompleted}"
+                                                CheckedChanged="OnIsCompleteCheckBoxChanged"
+                                                />
+                                        <StackLayout Orientation="Vertical" VerticalOptions="End"  BackgroundColor="#131313">
+                                            <Label 
+                                                Margin="5,0,0,0" 
+                                                TextColor="#f7fbf7" 
+                                                BackgroundColor="#131313"
+                                                Text="{Binding MainDescription}" 
+                                                FontSize="16"
+                                                FontAttributes="Bold"/>
+                                            <Label 
+                                                Margin="5,0,0,0" 
+                                                TextColor="#474647" 
+                                                BackgroundColor="#131313"
+                                                Text="{Binding DetailDescription}" 
+                                                FontSize="14"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand"  BackgroundColor="#131313">
+                                            <Label 
+                                                VerticalOptions="EndAndExpand"
+                                                HorizontalOptions="EndAndExpand"
+                                                Margin="5,0,0,0" 
+                                                WidthRequest="90"
+                                                TextColor="#ffc40b" 
+                                                BackgroundColor="#131313"
+                                                Text="" 
+                                                FontSize="14"/>
+                                            <Label 
+                                                VerticalOptions="End"
+                                                HorizontalOptions="EndAndExpand"
+                                                Margin="5,0,0,0" 
+                                                WidthRequest="90"
+                                                TextColor="#ffc40b" 
+                                                BackgroundColor="#131313"
+                                                Text="{Binding BeginDateText}" 
+                                                FontSize="14"/>
+                                            <Label 
+                                                VerticalOptions="End"
+                                                HorizontalOptions="EndAndExpand"
+                                                Margin="5,0,0,0" 
+                                                WidthRequest="90"
+                                                TextColor="#ffc40b" 
+                                                BackgroundColor="#131313"
+                                                Text="{Binding EndDateText}" 
+                                                FontSize="14"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </SwipeView>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
